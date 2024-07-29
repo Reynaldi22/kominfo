@@ -1,0 +1,48 @@
+import React, { useState } from 'react';
+
+const Tentang = () => {
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const handleToggle = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
+    const sections = [
+        { title: 'Latar Belakang', content: 'Informatika adalah ilmu yang mempelajari tentang penggunaan komputer untuk mengatur dan menganalisis data yang berukuran besar, baik data maupun informasi pada mesin berbasis komputasi. Informatika juga mencakup studi, perancangan, dan pembuatan sistem komputasi dasar yang dapat memproses dan menyajikan informasi secara efektif dan efisien. Informatika merupakan cabang ilmu yang sangat luas dan multidisiplin, yang mencakup berbagai bidang seperti ilmu komputer, ilmu informasi, sistem informasi, teknik komputer, dan aplikasi informasi dalam sistem informasi manajemen. Informatika juga berkaitan dengan aspek kognitif dan sosial dari penggunaan informasi dalam berbagai konteks, seperti bioinformatika, informatika medis, dan informatika perpustakaan. Informatika memiliki beberapa fungsi dan manfaat, antara lain: Meningkatkan kemampuan berpikir kritis dan kreatif dalam menemukan solusi terkait komputer dan sistem komputasi. Meningkatkan keterampilan dalam memanfaatkan teknologi informasi untuk mengumpulkan, menyimpan, mengolah, dan menyebarkan informasi. Meningkatkan pengetahuan tentang struktur, sifat, dan interaksi dari sistem informasi dan pengguna serta antarmuka antara keduanya. Meningkatkan pemahaman tentang dampak sosial dan etis dari penggunaan teknologi informasi dalam masyarakat. Meningkatkan kesempatan karir dalam bidang informatika yang memiliki prospek cerah di masa depan.' },
+        { title: 'Struktur Organisasi', content: 'Isi Struktur Organisasi' },
+        { title: 'Program dan Kegiatan', content: 'Isi Program dan Kegiatan' },
+        { title: 'Tugas Pokok dan Fungsi DKIPS', content: 'Isi Tugas Pokok dan Fungsi DKIPS' },
+        { title: 'Visi dan Misi', content: 'Isi Visi dan Misi' },
+    ];
+
+    return (
+        <div className="min-h-screen flex flex-col bg-cover text-white">
+            <h1 className="text-2xl font-bold mb-10 text-center">Tentang Kami</h1>
+            <ul className="space-y-4 flex-grow items-start px-4">
+                {sections.map((section, index) => (
+                    <li key={index} className="w-full">
+                        <div
+                            className="flex items-center cursor-pointer"
+                            onClick={() => handleToggle(index)}
+                        >
+                            <img
+                                src="/arrow.svg"
+                                alt="arrow"
+                                className={`transform transition-transform duration-200 ${openIndex === index ? 'rotate-90' : 'rotate-0'}`}
+                                style={{ width: '24px', height: '24px' }}
+                            />
+                            <span className="ml-2 text-lg font-medium">{section.title}</span>
+                        </div>
+                        {openIndex === index && (
+                            <div className="mt-2 p-2 pl-8 text-justify">
+                                {section.content}
+                            </div>
+                        )}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default Tentang;
