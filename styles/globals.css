@@ -114,12 +114,16 @@
 }
 
 .red-overlay {
-    background: linear-gradient(to bottom, rgb(118, 8, 8) 0%, rgb(148, 1, 1) 80%, rgba(255, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgb(94, 7, 7) 0%, rgb(148, 1, 1) 80%, rgba(255, 0, 0, 0) 100%);
     opacity: 1; /* Adjust opacity as needed */
-    height: 35%; /* Ensure it covers the full height of the parent */
+    height: 34%; /* Ensure it covers the full height of the parent */
     width: 100%; /* Ensure it covers the full width of the parent */
     z-index: 10; /* Ensure it's above the blurred background */
     position: absolute;
     top: 0;
     left: 0;
 }
+
+/*/css laporan/*/
+
+/* Submenu styles */

@@ -27,16 +27,81 @@ const Layout = ({ children }) => {
                 setIsBlur(true);
                 setIsRedOverlay(true);
                 break;
+                case '/laporan/laporan-keuangan':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
+                case '/laporan/ringkasan-dpa':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
+                case '/laporan/ringkasan-lra':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
+                case '/laporan/ren-keu':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
             case '/layanan':
                 setBackgroundImage("url('/kantor2.jpg')");
                 setIsBlur(true);
                 setIsRedOverlay(true);
                 break;
+                case '/layanan/maklumat-pelayanan':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
+                case '/layanan/jenis-layanan':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
+                case '/layanan/layanan-dkips':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
+                case '/layanan/whistleblowing-system':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
+                case '/layanan/pengaduan':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
             case '/program':
                 setBackgroundImage("url('/kantor2.jpg')");
                 setIsBlur(true);
                 setIsRedOverlay(true);
                 break;
+                case '/program/rencana-strategis':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
+                case '/program/iku':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
+                case '/program/rencana-anggaran':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
+                case '/program/ringkasan-rka':
+                    setBackgroundImage("url('/kantor2.jpg')");
+                    setIsBlur(true);
+                    setIsRedOverlay(true);
+                    break;
             case '/ppid':
                 setBackgroundImage("url('/kantor2.jpg')");
                 setIsBlur(true);
@@ -72,7 +137,7 @@ const Layout = ({ children }) => {
             )}
 
             <Header />
-            <main className="flex-grow flex flex-col items-center justify-center pt-[10px] md:pt-[20px] relative z-20">
+            <main className="flex-grow flex flex-col items-center justify-center  relative z-20">
                 <Wrapper className="w-full">{children}</Wrapper>
             </main>
             <Footer />
