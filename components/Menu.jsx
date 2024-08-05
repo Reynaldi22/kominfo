@@ -58,7 +58,7 @@ const Menu = () => {
                     onMouseLeave={() => item.submenu && hideSubMenu()}
                 >
                     <Link href={item.url} legacyBehavior>
-                        <a className="hover:underline">{item.name.toUpperCase()}</a>
+                        <a className="hover:font-bold">{item.name.toUpperCase()}</a>
                     </Link>
                     {item.submenu && visibleSubMenu === item.name && (
                         <ul

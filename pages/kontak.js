@@ -8,8 +8,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 1.474830, // Ganti dengan latitude lokasi Anda
-  lng: 124.845330, // Ganti dengan longitude lokasi Anda
+  lat: 1.4699775877555217,  // Ganti dengan latitude lokasi Anda
+  lng: 124.84488842035105, // Ganti dengan longitude lokasi Anda
 };
 
 const ContactPage = () => {
