@@ -19,7 +19,7 @@ const RENKEU = () => {
     return (
         <div className="min-h-screen flex flex-col bg-cover text-white">
             <h1 className="text-3xl font-bold mb-10 text-center">REN KEU</h1>
-            <h2 className="text-xl font-semibold">Perencanaan Keuangan</h2>
+            <h2 className="text-xl font-semibold ml-5">Perencanaan Keuangan</h2>
             <ul className="space-y-4 flex-grow items-start mt-5 px-4">
             {sections.map((section, index) => (
                    <AccordionSection

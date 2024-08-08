@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AccordionSection from './AccordionSection';
+import AccordionSection from '../../components/AccordionSection';
 
 const PPIDDINAS = () => {
     const [openIndex, setOpenIndex] = useState(null);

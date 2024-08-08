@@ -7,7 +7,7 @@ const Header = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
 
     return (
-        <header className="w-full h-[100px] md:mb-[150px] md:mt-[50px] flex items-center justify-center z-20 bg-transparent">
+        <header className="w-full h-[100px] md:mb-[50px] md:mt-[50px] flex items-center justify-center z-1000 bg-transparent">
             <Wrapper className="flex items-center justify-around">
                 <div className="flex items-center">
                     <Link href="/">

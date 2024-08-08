@@ -15,7 +15,7 @@ const RingkasanLRA = () => {
     return (
         <div className="min-h-screen flex flex-col bg-cover text-white">
             <h1 className="text-3xl font-bold mb-10 text-center">RINGKASAN LRA</h1>
-            <h2 className="text-xl font-semibold">Laporan Realisasi Anggaran</h2>
+            <h2 className="text-xl font-semibold ml-5">Laporan Realisasi Anggaran</h2>
             <ul className="space-y-4 flex-grow items-start mt-5 px-4">
             {sections.map((section, index) => (
                    <AccordionSection

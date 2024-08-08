@@ -11,136 +11,77 @@ const Layout = ({ children }) => {
     const [isRedOverlay, setIsRedOverlay] = useState(false);
 
     useEffect(() => {
-        switch (router.pathname) {
-            case '/tentang':
-                setBackgroundImage("url('/kantor2.jpg')");
-                setIsBlur(true);
-                setIsRedOverlay(true);
-                break;
-            case '/perjanjiankerja':
-                setBackgroundImage("url('/kantor2.jpg')");
-                setIsBlur(true);
-                setIsRedOverlay(true);
-                break;
-            case '/laporan':
-                setBackgroundImage("url('/kantor2.jpg')");
-                setIsBlur(true);
-                setIsRedOverlay(true);
-                break;
+        if (router.pathname === '/') {
+            setBackgroundImage("url('/kantor.jpg')");
+            setIsBlur(false);
+            setIsRedOverlay(false);
+        } else {
+            switch (router.pathname) {
+                case '/tentang':
+                case '/perjanjiankerja':
+                case '/laporan':
                 case '/laporan/laporan-keuangan':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
                 case '/laporan/ringkasan-dpa':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
                 case '/laporan/ringkasan-lra':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
                 case '/laporan/ren-keu':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
-            case '/layanan':
-                setBackgroundImage("url('/kantor2.jpg')");
-                setIsBlur(true);
-                setIsRedOverlay(true);
-                break;
+                case '/layanan':
                 case '/layanan/maklumat-pelayanan':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
                 case '/layanan/jenis-layanan':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
                 case '/layanan/layanan-dkips':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
                 case '/layanan/whistleblowing-system':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
                 case '/layanan/pengaduan':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
-            case '/program':
-                setBackgroundImage("url('/kantor2.jpg')");
-                setIsBlur(true);
-                setIsRedOverlay(true);
-                break;
+                case '/program':
                 case '/program/rencana-strategis':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
                 case '/program/iku':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
                 case '/program/rencana-anggaran':
-                    setBackgroundImage("url('/kantor2.jpg')");
-                    setIsBlur(true);
-                    setIsRedOverlay(true);
-                    break;
                 case '/program/ringkasan-rka':
+                case '/ppid':
+                case '/kontak':
                     setBackgroundImage("url('/kantor2.jpg')");
                     setIsBlur(true);
                     setIsRedOverlay(true);
                     break;
-            case '/ppid':
-                setBackgroundImage("url('/kantor2.jpg')");
-                setIsBlur(true);
-                setIsRedOverlay(true);
-                break;
-            case '/kontak':
-                setBackgroundImage("url('/kantor2.jpg')");
-                setIsBlur(true);
-                setIsRedOverlay(true);
-                break;
-            default:
-                setBackgroundImage("url('/kantor.jpg')");
-                setIsBlur(false);
-                setIsRedOverlay(false);
-                break;
+                default:
+                    setBackgroundImage("url('/kantor.jpg')");
+                    setIsBlur(false);
+                    setIsRedOverlay(false);
+                    break;
+            }
         }
     }, [router.pathname]);
+
+    const isHomePage = router.pathname === '/';
 
     return (
         <div className="relative min-h-screen flex flex-col justify-between">
             {/* Background Image */}
-            <div className="absolute inset-0">
-                <div
-                    className={`absolute inset-0 bg-cover bg-center ${isBlur ? 'filter-blur' : ''}`}
-                    style={{ backgroundImage: backgroundImage, zIndex: -1 }}
-                ></div>
-            </div>
-
+            {isHomePage ? (
+                <div className="absolute inset-0 w-full h-screen">
+                    <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{ backgroundImage: backgroundImage, zIndex: -2 }}
+                    ></div>
+                    <div className="absolute inset-0 bg-black opacity-50" style={{ zIndex: -1 }}></div>
+                </div>
+            ) : (
+                <div className="fixed inset-0 w-full min-h-screen">
+                    <div
+                        className={`absolute inset-0 bg-cover bg-center ${isBlur ? 'filter-blur' : ''}`}
+                        style={{ backgroundImage: backgroundImage, zIndex: -2 }}
+                    ></div>
+                    <div className="absolute inset-0 bg-black opacity-50" style={{ zIndex: -1 }}></div>
+                </div>
+            )}
 
             {/* Red Overlay */}
-            {isRedOverlay && (
+            {isRedOverlay && !isHomePage && (
                 <div className="absolute inset-0 z-10 red-overlay pointer-events-none"></div>
             )}
 
             <Header />
-            <main className="flex-grow flex flex-col items-center justify-center  relative z-20">
+            <main className="flex-grow flex flex-col items-center justify-center relative z-20">
                 <Wrapper className="w-full">{children}</Wrapper>
             </main>
-            <Footer />
         </div>
     );
 };

@@ -62,7 +62,7 @@ const Menu = () => {
                     </Link>
                     {item.submenu && visibleSubMenu === item.name && (
                         <ul
-                            className="submenu absolute left-0 top-full mt-1 bg-white bg-opacity-50 text-white shadow-lg z-100"
+                            className="submenu absolute left-0 top-full mt-1 bg-white bg-opacity-50 text-white shadow-lg"
                             onMouseEnter={handleMouseEnterSubMenu}
                             onMouseLeave={hideSubMenu}
                         >
