@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
-import Footer from './Footer';
+import Footer from './RunningText';
 import Wrapper from './Wrapper';
 import { useRouter } from 'next/router';
 
@@ -8,13 +8,11 @@ const Layout = ({ children }) => {
     const router = useRouter();
     const [backgroundImage, setBackgroundImage] = useState("url('/kantor.jpg')");
     const [isBlur, setIsBlur] = useState(false);
-    const [isRedOverlay, setIsRedOverlay] = useState(false);
 
     useEffect(() => {
         if (router.pathname === '/') {
             setBackgroundImage("url('/kantor.jpg')");
             setIsBlur(false);
-            setIsRedOverlay(false);
         } else {
             switch (router.pathname) {
                 case '/tentang':
@@ -39,12 +37,10 @@ const Layout = ({ children }) => {
                 case '/kontak':
                     setBackgroundImage("url('/kantor2.jpg')");
                     setIsBlur(true);
-                    setIsRedOverlay(true);
                     break;
                 default:
                     setBackgroundImage("url('/kantor.jpg')");
                     setIsBlur(false);
-                    setIsRedOverlay(false);
                     break;
             }
         }
@@ -53,7 +49,10 @@ const Layout = ({ children }) => {
     const isHomePage = router.pathname === '/';
 
     return (
-        <div className="relative min-h-screen flex flex-col justify-between">
+        <div className={`relative min-h-screen flex flex-col justify-between ${!isHomePage ? 'red-overlay' : ''}`}>
+            {!isHomePage && (
+                <div className="fixed inset-0 top-0 left-0 z-10 red-overlay pointer-events-none"></div>
+            )}
             {/* Background Image */}
             {isHomePage ? (
                 <div className="absolute inset-0 w-full h-screen">
@@ -71,11 +70,6 @@ const Layout = ({ children }) => {
                     ></div>
                     <div className="absolute inset-0 bg-black opacity-50" style={{ zIndex: -1 }}></div>
                 </div>
-            )}
-
-            {/* Red Overlay */}
-            {isRedOverlay && !isHomePage && (
-                <div className="absolute inset-0 z-10 red-overlay pointer-events-none"></div>
             )}
 
             <Header />

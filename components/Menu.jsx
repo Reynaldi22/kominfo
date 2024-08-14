@@ -5,20 +5,20 @@ const data = [
     { id: 1, name: "Beranda", url: "/" },
     { id: 2, name: "Tentang Kami", url: "/tentang" },
     { id: 3, name: "Perjanjian Kinerja", url: "/perjanjiankerja" },
-    { id: 4, name: "Laporan", url: "/laporan", submenu: [
+    { id: 4, name: "Laporan", url: "/", submenu: [
         { name: "Laporan Keuangan", url: "/laporan/laporan-keuangan" },
         { name: "Ringkasan DPA", url: "/laporan/ringkasan-dpa" },
         { name: "Ringkasan LRA", url: "/laporan/ringkasan-lra" },
         { name: "REN KEU", url: "/laporan/ren-keu" },
     ]},
-    { id: 5, name: "Layanan", url: "/layanan", submenu: [
+    { id: 5, name: "Layanan", url: "/", submenu: [
         { name: "Maklumat Pelayanan", url: "/layanan/maklumat-pelayanan" },
         { name: "Jenis Layanan", url: "/layanan/jenis-layanan" },
         { name: "Layanan DKIPS", url: "/layanan/layanan-dkips" },
-        { name: "Whistleblowing System", url: "/layanan/whistleblowing-system" },
-        { name: "Pengaduan/Lapor", url: "/layanan/pengaduan" },
+        { name: "Whistleblowing System", url: "https://wbs.sulutprov.go.id/" },
+        { name: "Pengaduan/Lapor", url: "https://sulut.lapor.go.id/" },
     ]},
-    { id: 6, name: "Program", url: "/program", submenu: [
+    { id: 6, name: "Program", url: "/", submenu: [
         { name: "Rencana Strategis", url: "/program/rencana-strategis" },
         { name: "Indikator Kinerja Utama", url: "/program/iku" },
         { name: "Rencana Anggaran", url: "/program/rencana-anggaran" },

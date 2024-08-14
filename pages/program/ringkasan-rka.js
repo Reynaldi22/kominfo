@@ -9,8 +9,14 @@ const RencanaAnggaran = () => {
     };
 
     const sections = [
-        { title: 'Rekap RKA 2022', content: 'Informatika adalah ilmu yang mempelajari tentang penggunaan komputer ' },
-        
+        { title: 'Rekap RKA 2022', content:
+         <div>
+            <div className="mb-4">
+                <ul className="list-disc list-inside">
+                    <li><a href= "/Rencana_anggaran/DKIPS_RENJA_2021.pdf" target="_blank" rel="noopener noreferrer"> Rekap RKA 2022</a></li>
+                </ul>
+            </div>
+        </div> }
     ];
 
     return (

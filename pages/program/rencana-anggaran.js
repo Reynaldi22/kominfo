@@ -9,10 +9,17 @@ const RencanaAnggaran = () => {
     };
 
     const sections = [
-        { title: 'Rencana Anggaran 2021', content: 'Informatika adalah ilmu yang mempelajari tentang penggunaan komputer ' },
-        
+        { title: 'Rencana Anggaran 2021', content:
+         <div>
+            <div className="mb-4">
+                <ul className="list-disc list-inside">
+                    <li><a href= "/Rencana_anggaran/DKIPS_RENJA_2021.pdf" target="_blank" rel="noopener noreferrer"> Rencana Anggaran 2021</a></li>
+                </ul>
+            </div>
+        </div> }
     ];
 
+    
     return (
         <div className="min-h-screen flex flex-col bg-cover text-white">
             <h1 className="text-3xl font-bold mb-10 text-center">RENCANA ANGGARAN</h1>

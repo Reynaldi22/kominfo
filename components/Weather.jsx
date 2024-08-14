@@ -40,7 +40,7 @@ const Weather = () => {
     const time = dateTime.toLocaleTimeString();
 
     return (
-        <div className="text-white text-center">
+        <div className="text-white text-center mt-10">
             <p className="text-1xl md:text-2xl">{day}, {date} {month} {year}</p>
             <p className="text-1xl md:text-2xl">{weather.main.temp}°C</p>
             <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} className="mx-auto" alt="Weather icon" />

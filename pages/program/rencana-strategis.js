@@ -9,8 +9,22 @@ const RencanaStrategis = () => {
     };
 
     const sections = [
-        { title: 'Renstra 2017-2021', content: 'Informatika adalah ilmu yang mempelajari tentang penggunaan komputer ' },
-        { title: 'Renstra 2021-2026', content: 'Informatika adalah ilmu yang mempelajari tentang penggunaan komputer ' },
+        { title: 'Renstra 2017-2021', content:
+         <div>
+            <div className="mb-4">
+                <ul className="list-disc list-inside">
+                    <li><a href= "/Renstra/DKIPS_RENSTRA_2017_2021_PDF.pdf" target="_blank" rel="noopener noreferrer">Renstra 2017-2021</a></li>
+                </ul>
+            </div>
+        </div> },
+        { title: 'Renstra 2021-2026', content:
+            <div>
+               <div className="mb-4">
+                   <ul className="list-disc list-inside">
+                       <li><a href= "/Renstra/DKIPS_RENSTRA_STRATEGIS_2021-2026.pdf" target="_blank" rel="noopener noreferrer">Renstra 2021-2026</a></li>
+                   </ul>
+               </div>
+           </div> }
     ];
 
     return (
