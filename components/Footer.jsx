@@ -22,7 +22,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-center mt-2 space-x-4">
+        <div className="flex justify-center mt-2 space-x-2">
           <p>@ 2021-2024 | Command Center Pemprov SULUT</p>
           <Link href="https://www.instagram.com/pelsis_official?igsh=dG5udHZqaHJtOTJ3" legacyBehavior>
             <a className="text-white hover:text-gray-300">

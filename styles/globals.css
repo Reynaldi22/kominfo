@@ -149,7 +149,7 @@
 .red-overlay4 {
     background: linear-gradient(to bottom, rgb(94, 7, 7) 0%, rgb(122, 2, 2) 30%, rgba(255, 0, 0, 0) 100%);
     opacity: 1; /* Sesuaikan opacity sesuai kebutuhan */
-    height: 10%; /* Pastikan menutupi bagian bawah */
+    height: 7%; /* Pastikan menutupi bagian bawah */
     width: 100%; /* Pastikan menutupi lebar penuh */
     z-index: 10; /* Pastikan berada di atas konten lainnya */
     position: absolute;
